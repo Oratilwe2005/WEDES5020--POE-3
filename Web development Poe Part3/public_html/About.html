@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Boys Thrive Foundation | About Us</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #319795;
+            --light-bg: #f7fafc;
+            --dark-text: #2d3748;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 { font-size: 1.5rem; }
+        .logo span { color: var(--accent-color); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover, nav a.active { color: var(--accent-color); }
+
+        .page-header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 5%;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+
+        .section-block {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .section-block h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>The Boys <span>Thrive</span> Foundation</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="get-support.html">Get Support</a></li>
+                <li><a href="contact.html">Contact & Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>About Boys Thrive Foundation</h1>
+        <p>Empowering young men to navigate life's challenges with confidence.</p>
+    </div>
+
+    <main class="container">
+        <section class="section-block">
+            <h2>Who We Are</h2>
+            <p>The Boys Thrive Foundation is a non-profit organisation dedicated to improving the mental health, emotional resilience, and social development of boys and young men aged 12 to 25. We focus particularly on young people from under-resourced communities where access to mental healthcare is limited.</p>
+        </section>
+
+        <div class="grid-2">
+            <div class="section-block">
+                <h2>Our Mission</h2>
+                <p>To create safe, accessible platforms where young men can break the silence surrounding mental health, connect with positive mentors, develop essential life skills, and thrive academically and personally.</p>
+            </div>
+            <div class="section-block">
+                <h2>Our Vision</h2>
+                <p>A society where every young man feels empowered to express his emotions, seek guidance without fear or stigma, and grow into a healthy, responsible, and fulfilled leader in his community.</p>
+            </div>
+        </div>
+
+        <section class="section-block">
+            <h2>Why Our Work Matters</h2>
+            <p>Boys and young men face unique pressures—including social expectations to hide emotional pain, peer pressure, bullying, relationship dynamics, and academic stress. Many hesitate to reach out for help due to the myth that showing emotion is a weakness. We challenge these stereotypes by teaching that emotional honesty and asking for support are acts of courage.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Boys Thrive Foundation. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

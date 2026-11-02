@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Boys Thrive Foundation | Gallery & Activities</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #319795;
+            --light-bg: #f7fafc;
+            --dark-text: #2d3748;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 { font-size: 1.5rem; }
+        .logo span { color: var(--accent-color); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover, nav a.active { color: var(--accent-color); }
+
+        .page-header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 5%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+
+        /* Filter Controls */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--white);
+            color: var(--dark-text);
+            border: 2px solid #e2e8f0;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-color: var(--accent-color);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-info {
+            padding: 1rem 1.2rem;
+        }
+
+        .gallery-info h3 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-info p {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        .banner-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .banner-box a {
+            display: inline-block;
+            margin-top: 1rem;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>The Boys <span>Thrive</span> Foundation</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="get-support.html">Get Support</a></li>
+                <li><a href="contact.html">Contact & Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Life at Boys Thrive</h1>
+        <p>A glimpse into our mentorship sessions, sports days, and mental health workshops.</p>
+    </div>
+
+    <main class="container">
+        <!-- Category Filter Buttons -->
+        <div class="filter-bar">
+            <button class="filter-btn active">All Moments</button>
+            <button class="filter-btn">Mentorship</button>
+            <button class="filter-btn">Workshops</button>
+            <button class="filter-btn">Sports & Outdoor</button>
+        </div>
+
+        <!-- Image Gallery Grid -->
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Group discussion">
+                <div class="gallery-info">
+                    <h3>Community Peer Circle</h3>
+                    <p>Boys sharing experiences in a safe, guided talk circle.</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Mentorship session">
+                <div class="gallery-info">
+                    <h3>1-on-1 Mentorship Session</h3>
+                    <p>Guidance on academics, career paths, and emotional resilience.</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80" alt="Team building workshop">
+                <div class="gallery-info">
+                    <h3>Leadership Workshop</h3>
+                    <p>Interactive life-skills and communication exercises.</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80" alt="Youth sports day soccer">
+                <div class="gallery-info">
+                    <h3>Annual Youth Sports Day</h3>
+                    <p>Building teamwork, physical well-being, and camaraderie.</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Counseling presentation">
+                <div class="gallery-info">
+                    <h3>Mental Health Awareness Talk</h3>
+                    <p>Guest speakers explaining stress-management tools in schools.</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80" alt="Team high five">
+                <div class="gallery-info">
+                    <h3>Youth Celebration Event</h3>
+                    <p>Recognizing progress and positive role models in our community.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Contribution Banner -->
+        <div class="banner-box">
+            <h2>Have Photos from an NGO Event?</h2>
+            <p>If you participated in or volunteered at one of our activities, we'd love to feature your photos!</p>
+            <a href="contact.html">Contact Our Media Team</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Boys Thrive Foundation. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

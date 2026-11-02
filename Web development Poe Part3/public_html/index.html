@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Boys Thrive Foundation | Home</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #319795;
+            --accent-hover: #2c7a7b;
+            --light-bg: #f7fafc;
+            --dark-text: #2d3748;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.88), rgba(43, 108, 176, 0.88)), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: var(--white);
+            padding: 7rem 5% 5rem 5%;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.2;
+        }
+
+        .hero p.slogan {
+            font-size: 1.35rem;
+            font-style: italic;
+            color: #e2e8f0;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons Styles */
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(0);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Main Container & Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+            flex: 1;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        /* Card Component Styles */
+        .card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2.25rem;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--secondary-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-top-color: var(--accent-color);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.35rem;
+        }
+
+        .card p {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link {
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: var(--transition);
+        }
+
+        .card-link:hover {
+            color: var(--accent-color);
+            transform: translateX(4px);
+        }
+
+        /* Emergency Alert Banner */
+        .emergency-banner {
+            background-color: #fff5f5;
+            color: #c53030;
+            border: 1px solid #feb2b2;
+            padding: 1.25rem 2rem;
+            text-align: center;
+            margin-top: 3.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .emergency-banner strong {
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 5%;
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.2rem;
+                padding: 1.2rem 5%;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 4rem 5% 3rem 5%;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p.slogan {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>The Boys <span>Thrive</span> Foundation</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="get-support.html">Get Support</a></li>
+                <li><a href="contact.html">Contact & Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Supporting Mental & Emotional Well-Being for Young Men</h2>
+        <p class="slogan">"Speak Up. Grow Strong. Thrive Together."</p>
+        <div class="cta-buttons">
+            <a href="get-support.html" class="btn btn-primary">Find Support Now</a>
+            <a href="about.html" class="btn btn-secondary">Learn About Us</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section>
+            <h2 style="text-align: center; color: var(--primary-color); font-size: 2rem; margin-bottom: 0.5rem;">Welcome to Boys Thrive</h2>
+            <p style="text-align: center; color: #4a5568; max-width: 750px; margin: 0 auto;">
+                Asking for help is a sign of strength. We provide young men aged 12 to 25 with a safe, confidential space to learn about mental health, find positive guidance, and build emotional resilience.
+            </p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <h3>Mental Health Resources</h3>
+                        <p>Access simple, practical guides and articles on managing stress, coping with anxiety, handling peer pressure, and building self-esteem.</p>
+                    </div>
+                    <a href="resources.html" class="card-link">Explore Resources &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Mentorship Programmes</h3>
+                        <p>Connect with trusted male mentors who offer guidance, career advice, personal development support, and a non-judgmental listening ear.</p>
+                    </div>
+                    <a href="get-support.html" class="card-link">Join Mentorship &rarr;</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Community Events</h3>
+                        <p>Get involved in sports days, life skills workshops, group discussions, and mental health awareness activities designed for young men.</p>
+                    </div>
+                    <a href="contact.html" class="card-link">View Activities &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="emergency-banner">
+            <span>In immediate distress or crisis? Call the Toll-Free Helpline at <strong>0800 123 456</strong> (24/7 Support).</span>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Boys Thrive Foundation. All Rights Reserved.</p>
+        <p style="font-size: 0.875rem; margin-top: 0.5rem; opacity: 0.85;">Disclaimer: Information on this site is for educational purposes and does not replace professional medical advice.</p>
+    </footer>
+
+</body>
+</html>
